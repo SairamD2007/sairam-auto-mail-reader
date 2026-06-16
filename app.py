@@ -198,14 +198,14 @@ if "credentials" not in st.session_state:
         </div>
     """, unsafe_allow_html=True)
     
-   auth_params = {
-    "client_id": st.secrets["google"]["client_id"],
-    "redirect_uri": REDIRECT_URI,
-    "response_type": "code",
-    "scope": SCOPES,
-    "access_type": "offline",
-    "prompt": "consent select_account",
-    "include_granted_scopes": "true"
+    auth_params = {
+        "client_id": st.secrets["google"]["client_id"],
+        "redirect_uri": REDIRECT_URI,
+        "response_type": "code",
+        "scope": SCOPES,
+        "access_type": "offline",
+        "prompt": "consent select_account",
+        "include_granted_scopes": "true"
     }
 
 auth_url = (
