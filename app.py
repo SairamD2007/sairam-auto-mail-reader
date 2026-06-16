@@ -4,6 +4,7 @@ import requests
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
 import google.generativeai as genai
+from urllib.parse import urlencode
 
 # --- INITIAL APP SETUP WITH LIGHT REFINED THEME ---
 st.set_page_config(page_title="Sairam's Auto Mail Reader", page_icon="⚡", layout="wide")
@@ -197,14 +198,20 @@ if "credentials" not in st.session_state:
         </div>
     """, unsafe_allow_html=True)
     
-    auth_url = (
-        f"https://accounts.google.com/o/oauth2/v2/auth?"
-        f"client_id={st.secrets['google']['client_id']}&"
-        f"redirect_uri={REDIRECT_URI}&"
-        f"response_type=code&"
-        f"scope={SCOPES}&"
-        f"prompt=select_account"
-    )
+   auth_params = {
+    "client_id": st.secrets["google"]["client_id"],
+    "redirect_uri": REDIRECT_URI,
+    "response_type": "code",
+    "scope": SCOPES,
+    "access_type": "offline",
+    "prompt": "consent select_account",
+    "include_granted_scopes": "true"
+}
+
+auth_url = (
+    "https://accounts.google.com/o/oauth2/v2/auth?"
+    + urlencode(auth_params)
+)
     
     st.markdown(f"""
         <div style="text-align: center; margin-top: -10px;">
