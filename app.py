@@ -153,7 +153,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 SCOPES = "https://www.googleapis.com/auth/gmail.readonly"
-REDIRECT_URI = "http://localhost:8501/"
+REDIRECT_URI = "https://sairam-mail-reader.streamlit.app/"
 
 # --- CAPTURE GOOGLE REDIRECT TOKENS ---
 query_params = st.query_params
