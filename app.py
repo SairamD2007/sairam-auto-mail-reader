@@ -206,7 +206,7 @@ if "credentials" not in st.session_state:
     "access_type": "offline",
     "prompt": "consent select_account",
     "include_granted_scopes": "true"
-}
+    }
 
 auth_url = (
     "https://accounts.google.com/o/oauth2/v2/auth?"
