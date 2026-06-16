@@ -337,7 +337,7 @@ if st.button("Generate AI Summary", type="primary"):
                     with layout_right:
                         with st.spinner("Analyzing text layout via Gemini..."):
                             genai.configure(api_key=st.secrets["gemini"]["api_key"])
-                            model = genai.GenerativeModel("gemini-1.5-flash")
+                            model = genai.GenerativeModel("gemini-2.5-flash")
                             
                             ai_prompt = (
                                 f"The user filtered their inbox looking for content matching: '{search_query}'.\n"
