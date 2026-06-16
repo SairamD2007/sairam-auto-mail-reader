@@ -208,10 +208,10 @@ if "credentials" not in st.session_state:
         "include_granted_scopes": "true"
     }
 
-auth_url = (
-    "https://accounts.google.com/o/oauth2/v2/auth?"
-    + urlencode(auth_params)
-)
+    auth_url = (
+        "https://accounts.google.com/o/oauth2/v2/auth?"
+        + urlencode(auth_params)
+    )
     
     st.markdown(f"""
         <div style="text-align: center; margin-top: -10px;">
