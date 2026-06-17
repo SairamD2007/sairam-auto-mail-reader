@@ -221,7 +221,6 @@ if "credentials" not in st.session_state:
         f"scope={SCOPES}&"
         f"prompt=select_account"
     )
-    st.code(auth_url)
     
     st.markdown(f"""
         <div style="text-align: center; margin-top: -10px;">
