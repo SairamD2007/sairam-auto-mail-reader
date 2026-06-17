@@ -169,7 +169,7 @@ if "credentials" not in st.session_state:
         # Fallback manual string declaration if contextual arrays are strict
         REDIRECT_URI = "https://sairam-mail-reader.streamlit.app/"
 else:
-    REDIRECT_URI = "https://sairam-mail-reader.streamlit.app/"
+    REDIRECT_URI = "https://sairam-mail-reader.streamlit.app"
 
 # --- CAPTURE GOOGLE REDIRECT TOKENS ---
 query_params = st.query_params
